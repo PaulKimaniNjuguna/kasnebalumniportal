@@ -1,39 +1,149 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>trial</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<header class="header">
-		<img src="http://localhost/Kasneb/images/logo.jpg" class="logo"/>
-		<div class="btn">
-		<button type="btn"><span></span>Register</button>
-		<button type="btn"><span></span>Login</button>
-		<a href="">Admin</a>
-		</div>
-	</header>
-	<nav class="navbar">
-		<div class="navigation">
-		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#aboutus">About us</a></li>
-			<li><a href="#contacus">Contact us</a></li>
-		</ul>
-		</div>
-	</nav>
-	<main>
-		<div class="content">
-			<section id="home"><img src="http://localhost/Kasneb/images/alumnibackground.jpg"/>
-			</section>
-			<section1 id="aboutus" class="about"></section1><h2>About us</h2><br><p>KASNEB Alumni was started in the year 2020. <br>The main aim was to unite KASNEB graduates who have <br> already completed KASNEB courses. It provides <br> a platform for interaction, sharing details jobs and other news updates.</p><a href="#home">Back to homepage</a></section1>
-			
-			<section2 id="contactus"></section2><h2>Contact us</h2><br><p>Contact us on<br> +254788233579<br> or <br>Visit our offices at UpperHill Nairobi.</p><a href="#home">Back to homepage</a></section2>
-		</div>
-	</main>
-	<footer><a href="#home">Back to homepage</a><p>Copyright Ⓒ2022</p></footer>
 
-</body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Kasneb alumni website</title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		  <script>
+		   
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#kasnebslider").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  </script>
+	</head>
+	<body>
+		<!---start-Wrap--->
+			<!---start-header--->
+			<div class="header">
+				<div class="wrap">
+					<div class="header-top">
+						<div class="logo">
+							<a href="index.html"><img src="images/logo.jpg" title="logo" /></a>
+							
+						</div>
+						
+					</div>
+						<div class="contact-info">
+							<p>Click the button below to register if you don't<br> have an account or Login to your account.</p>
+							<button class="button1">Register</button>
+							<button class="button1">Login</button>
+						</div>
+
+						<div class="clear"> </div>
+				</div>
+				<div class="header-top-nav">
+					<div class="wrap">
+						<ul>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Services</a></li>
+							<li><a href="gallery.html">Gallery</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!---End-header--->
+			<div class="clear"> </div>
+			<!--start-image-slider---->
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+						    <ul class="rslides" id="kasnebslider">
+						      <li><img src="images/kasnebslider2.jpg" alt=""></li>
+						      <li><img src="images/kasnebslider.jpg" alt=""></li>
+						      <li><img src="images/kasnebslider3.jpg" alt=""></li>
+						    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+					<!--End-image-slider---->
+			<!---start-content----->
+			<div class="content">
+				<div class="quit">
+					<p><span class="start">KASNEB </span> Alumni <span class="end">Motto: Make an impact</span></p>
+				</div>
+					
+				<div class="clear"> </div>
+				<div class="content-box">
+					<div class="wrap">
+					<div class="content-box-left">
+						<div class="content-box-left-topgrid">
+							<h3><p> KASNEB graduates are allowed to advertise jobs, news or other updates to other graduates</p></h3>
+							<span>To advertise email us at:<p>kasnebalumniadmin@hotmail.com</p></span>
+						</div>
+						<div class="content-box-left-bootomgrids">
+							<div class="content-box-left-bootomgrid">
+								<h3>Welcome</h3>
+								
+								<a href="#"><img src="images/kasnebslider.jpg" title="image-name" /></a>
+							</div>
+							<div class="content-box-left-bootomgrid">
+								<h3>News and Updates</h3>
+								
+								<a href="#"><img src="images/kasnebslider3.jpg" title="image-name" /></a>
+							</div>
+							<div class="content-box-left-bootomgrid lastgrid">
+								<h3>Information about members</h3>
+								
+								<a href="#"><img src="images/kasnebslider2.jpg" title="image-name" /></a>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="clear"> </div>
+					</div>
+					<div class="content-box-right">
+						<div class="content-box-right-topgrid">
+							<h3>Welcome message</h3>
+							<a href="#"><img src="images/kasnebslider.jpg" title="imnage-name" /></a>
+							<h4>To all KASNEB graduates</h4>
+							<p>"KASNEB graduates who have completed different Kasneb courses you are welcome. Kindly register on the website and provide details required. KASNEB alumni admin will allow verify your details and accept your request. Thank you as you prepare to join us to be part of KASNEB alumni."</p>
+						</div>
+						<div class="content-box-right-bottomgrid">
+							
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+				<div class="boxs">
+				<div class="wrap">
+				<div class="box">
+			
+				</div>
+				<div class="box center-box">
+					<h2>KASNEB ALUMNI PARTNERS</h2>
+					<ul>
+						<li><a href="https://www.icpak.com">ICPAK</a></li>
+						<li><a href="https://www.ics.ke">ICS</a></li>
+						<li><a href="https://www.icifa.co.ke">ICIFA</a></li>
+						<li><a href="https://icmkenya.co.ke">ICM-K</a></li>
+						<li><a href="https://www.ifac.org">IFAC</a></li>
+						<li><a href="https://www.awak.co.ke">AWAK</a></li>
+					</ul>
+				</div>
+		
+				<div class="clear"> </div>
+			</div>
+			<!---start-box---->
+		</div>
+		<!---start-copy-Right----->
+		<div class="copy-tight">
+			<p>&copy Kasneb Alumni 2022.All rights reserved.</p>
+		</div>
+		<!---End-copy-Right----->
+			</div>
+			<!---End-content----->
+		</div>
+		<!---End-Wrap--->
+	</body>
 </html>
+
