@@ -13,4 +13,4 @@ $mysqli = new mysqli(hostname: $host, username: $username, password: $passw, dat
 if ($mysqli->connect_errno) {
 	die("Connection error:" . $mysqli->connect_error);
 	
-} echo "Connected";
+} 
