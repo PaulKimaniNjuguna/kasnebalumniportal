@@ -1,12 +1,12 @@
 <?php
 
 	$host = "localhost";
-	$db = "kasnebalumni";
+	$db = "kasneb";
 	$username = "root";
 	$passw = "";
 
 	//create connection
-$mysqli = new mysqli(hostname: $host, username: $username, password: $passw, database: $db);
+   $mysqli = new mysqli($host, $username,  $passw,  $db);
 
 
 	//check connection

@@ -213,24 +213,53 @@
  </head>
  <body>
     <?php
-    require "connect.php";
+    require "connect.php";// require config file
 
-        $name = $_POST['name'];
-        $regno =$_POST['regno'];
-        $exam =$_POST['exam'];
-        $lastdate =$_POST['lastdate'];
-        $mobileno =$_POST['mobileno']; 
-        $email =$_POST['email'];
-        $password =$_POST['password'];
-        $confirmpassword =$_POST['confirmpassw'];
-        $companyname =$_POST['company'];
-        $occupation =$_POST['occupation'];
-        $telno =$_POST['telno'];
-        $companyemail =$_POST['cmail'];
-        $professional =$_POST['professional'];
-        $membership =$_POST['memberships'];
+    //decalare and initialize variables
+    $name = $regno = $exam = $lastdate = $mobileno = $email = $password = $confirmpassword = $companyname = $occupation = $telno = $companyemail = $professional = $membership = $password_err = "";
 
-        $nameErr = $regnoErr = $examErr = $lastsittingErr = $phonenoErr = $emailErr = $passwordErr = $confirmpasswordErr = $companynameErr = $occupation = $error; 
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+
+        if(empty(trim($_POST["password"])))
+        {
+            $password_err = "Please enter a password.";
+        }
+        else
+        {
+
+        $name = $_POST["name"];
+        $regno = $_POST["regno"];
+        $exam = $_POST["exam"];
+        $lastSitting = $_POST["lastSitting"];
+        $phoneNumber = $_POST["phoneNumber"];
+        $email = $_POST["email"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $company = $_POST["company"];
+        $occupation = $_POST["occupation"];
+        $officePhone = $_POST["telno"];
+        $companyEmail = $_POST["cmail"];
+        $proffesionalBody = $_POST["professional"];
+        $membershipType = $_POST["memberships"];
+
+        $sql = "INSERT INTO users (name, regno, examination, lastsitting, phoneNumber, email, password, company, occupation, officePhone, companyEmail, proffesionalBody, membershipType)  VALUES ('$name', '$regno', '$exam', '$lastSitting', '$phoneNumber', '$email', '$password', '$company', '$occupation', '$officePhone', '$companyEmail', '$proffesionalBody', '$membershipType')";
+
+        if ( $mysqli->query($sql) === TRUE)
+        {
+            echo "New record created successfully";
+        }
+        else
+        {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+    }
+
+
+    }
+
+
+    $nameErr = $regnoErr = $examErr = $lastsittingErr = $phonenoErr = $emailErr = $passwordErr = $confirmpasswordErr = $companynameErr = $occupation = $error = ""; 
 
 
     ?>
@@ -238,7 +267,7 @@
 
 
     <div class="container">
-        <form action="pendingregistration.php" method="POST">
+        <form action="register.php" method="POST">
             <h3><strong>Personal details</strong></h3><br>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" placeholder="Your name" required>
@@ -246,17 +275,19 @@
             <input type="text" name="regno" id="regno" placeholder="KASNEB Reg No." required>
             <label for="exam">Examination</label>
             <input type="text" name="exam" placeholder="e.g. CICT, CPA" required>
-            <span><label>Month</label>
-            <select name="month" id="month"></select></span>
-            <span><label>Year</label><select name="year" id="year"></select></span>
+            <span><label>Last Sitting</label>
+            <input type="month" id="lastSitting" name="lastSitting"  min="1980-08" value="2020-10"></span> <br>
             <label for="mobileno">Mobile No.</label>
-            <input type="text" name="mobileno" placeholder="e.g. 0712654789" required>
+            <input type="text" name="phoneNumber" placeholder="e.g. 0712654789" required>
             <label for="email">Email address</label>
             <input type="email" name="email" id="email" placeholder="Enter email" required>
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="Enter password">
             <label for="confirmpassw">Confirm Password</label>
             <input type="password" name="confirmpassw" id="confirmpassw" placeholder="Re-enter your password"><br>
+            <?php
+            echo $password_err; 
+            ?>
             <h3><strong>Work</strong></h3><br>
             <label for="company">Company name</label>
             <input type="text" name="company" id="company" placeholder="e.g. Safaricom PLC" required>
@@ -282,42 +313,6 @@
         </form>
 
     </div>
-    <script>
-        // create references for dropdowns
-const yearselect = document.getElementById("year");
-const monthselect = document.getElementById("month");
-
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-'July', 'August', 'September', 'October', 'November', 'December'];
-
-function populateMonths(){
-    for (var i=0; i<months.length; i++){
-        const option = document.createElememnt('option');
-        option.textContent = months[i];
-        monthselect.appendChild(option);
-    }
-    monthselect.value = "January";
-}(); 
-
-function populateYears(){
-    let year = yearselect.value
-    //Get the current year as a number
-    let year = new Date().getFullYear();
-
-    //Make previous 100 years be options
-    for (var i = 0; i < 101; i++) {
-        const option = document.createElememnt("option");
-        option.textContent = year - i;
-        yearselect.appendChild(option);
-
-    }
-
-}
-populateMonths(monthselect.value)
-populateYears();
-
-
-    </script>
     
  </body>
  </html>
