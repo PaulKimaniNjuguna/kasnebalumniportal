@@ -183,7 +183,7 @@
             color: white;
             padding: 16px 0px 16px 0px;
             text-decoration: none;
-            margin: 4px 2px 0 0;
+            margin: auto;
             cursor: pointer;
            
             text-align: center;
@@ -196,7 +196,7 @@
             color: white;
             padding: 16px 32px;
             text-decoration: none;
-            margin: 4px 2px;
+            margin: auto;
             cursor: pointer;
         }
         
@@ -213,17 +213,18 @@
  </head>
  <body>
     <?php
-    require "connect.php";// require config file
+    require "connect.php";
 
     //decalare and initialize variables
-    $name = $regno = $exam = $lastdate = $mobileno = $email = $password = $confirmpassword = $companyname = $occupation = $telno = $companyemail = $professional = $membership = $password_err = "";
+    $name = $regno = $exam = $lastdate = $mobileno = $email = $password = $confirmpassword = $companyname = $occupation = $telno = $companyemail = $professional = $membership  = "";
+     $password_err = "<script>alert(Kindly enter password.)<script>";
 
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
 
         if(empty(trim($_POST["password"])))
         {
-            $password_err = "Please enter a password.";
+            echo "<script>alert('Please enter a password.')</script>";
         }
         else
         {
@@ -246,11 +247,11 @@
 
         if ( $mysqli->query($sql) === TRUE)
         {
-            echo "New record created successfully";
+            echo "<script>alert('Password do not match.')<script>";
         }
         else
         {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" .$mysqli->error;
         }
 
     }
@@ -286,7 +287,7 @@
             <label for="confirmpassw">Confirm Password</label>
             <input type="password" name="confirmpassw" id="confirmpassw" placeholder="Re-enter your password"><br>
             <?php
-            echo $password_err; 
+            echo "<script>alert(Password do not match.)</script>"; 
             ?>
             <h3><strong>Work</strong></h3><br>
             <label for="company">Company name</label>

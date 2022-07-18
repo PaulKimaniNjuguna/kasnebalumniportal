@@ -1,52 +1,17 @@
 <?php
 require 'connect.php';
 
-if (isset($_POST['submit'])) 
-{
-	
-	
-	$company = $_POST['company'];
-	$title = $_POST['title'];
-	$description = $_POST['description'];
-	$qualifications = $_POST['qualifications'];
-
-	
-	
-
-
-	if (str_contains("/^[A-Za-z]\w+$/", $company)) {
-		return TRUE;
-	}
-
-	else if (str_contains("/^[A-Za-z]\w+$/", $title)) {
-		return TRUE;
-	}
-	
-
-	
-	else 
-	{
-		$sql = "INSERT INTO jobs (company, title, description, qualifications) VALUES ('$company', '$title', '$description', '$qualifications')";
-	
-	 if ( $mysqli->query($sql) === TRUE)
-        {
-            echo "<script>alert('Job added.')</script>";
-        }
-        else
-        {
-            echo "Error: " . $sql . "<br>" . $mysqli->error;
-        }
-    }
-}
-
-
+$id = $_REQUEST['id'];
+$query = "SELECT * FROM jobs WHERE id = '".$id."'";
+$result = mysqli_query($mysqli, $query) or die(mysqli_error());
+$row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Update record</title>
 	<style>
 		*{
 			margin: 0;
@@ -60,7 +25,7 @@ if (isset($_POST['submit']))
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			background: #12689a;
+			
 		}
 		.wrapper {
 			padding: 20px;
@@ -135,32 +100,54 @@ if (isset($_POST['submit']))
 	</style>
 </head>
 <body>
+	<?php
 	
+
+	if (isset($_POST['update'])) 
+	{
+		$id = $_REQUEST['id'];
+		$company = $_REQUEST['company'];
+		$title = $_REQUEST['title'];
+		$description = $_REQUEST['description'];
+		$qualifications = $_REQUEST['qualifications'];
+
+		$updatequery = "UPDATE jobs SET company = '".$company."', title = '".$title."', description = '".$description."', qualifications = '".$qualifications."' WHERE id ='".$id."'";
+		mysqli_query($mysqli, $updatequery) or die(mysqli_error());
+		echo "<script>alert('Record updated.')</script><br><br>
+		<a href='displayjobs.php'>Click here to go Back</a>";
+		
+	}
+	else 
+	{
+	?>
 	<div class="wrapper">
+
 		<h3>Post job here</h3>
 		<form class="form" method="POST" action="">
 		<div class="row">
 			<div class="input-group">
+				<input type="hidden" name="id" value="<?php echo $row['id'];?>">
 				<label>Company name</label>
-				<input type="text" name="company" id="company" placeholder="Enter the company" required>
+				<input type="text" name="company" id="company" placeholder="Enter the company" required value="<?php echo $row['company'];?>">
 			</div>
 			<div class="input-group">
 				<label>Title</label>
-				<input type="text" name="title" id="title" placeholder="Enter the job title" required>
+				<input type="text" name="title" id="title" placeholder="Enter the job title" required value="<?php echo $row['title'];?>">
 			</div>
 		</div>
 		<div class="input-group textarea">
 			<label>Description</label>
-			<textarea id="description" name="description" placeholder="Enter job description" required></textarea>
+			<textarea id="description" name="description" placeholder="Enter job description" required><?php echo $row['description'];?></textarea>
 		</div>
 		<div class="input-group textarea">
 			<label>Qualifications</label>
-			<textarea name="qualifications" id="qualifications" placeholder="Enter job qualifications"></textarea>
+			<textarea name="qualifications" id="qualifications" placeholder="Enter job qualifications" required><?php echo $row['qualifications'];?></textarea>
 		</div>
 		
 		<div class="input-group">
-			<button class="btn" name="submit">Post job</button>
+			<button class="btn" name="update">Update</button>
 		</div>
+	<?php }?>
 		</form>
 	</div>
 
