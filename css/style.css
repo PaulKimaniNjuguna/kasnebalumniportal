@@ -61,6 +61,20 @@ body{
 	-webkit-transition: 0.5s ease;
 	
 }
+.contact-info a input {
+	background: #44c8f6;
+	color: #FFFFFF;
+	padding: 10px;
+	margin: 10px;
+	border-color: #44c8f6;
+}
+.contact-info p {
+	font-family: 'Helvetica', sans-serif;
+	font-size: 1.0em;
+	font-weight: 400;
+	color: #3B3B3B;
+	text-transform: none;
+}
 .contact-info p a:hover{
 	color:#3B3B3B;
 }

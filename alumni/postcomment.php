@@ -6,8 +6,8 @@ if (isset($_POST['submit'])) {
 	$comment = $_POST['comment'];
 	$error;
 
-	if (!preg_match("/^[a-zA-Z]+$/", $name)){
-	 echo "<script>alert('Name must contain only alphabets and spaces')</script>";
+	if (str_contains("/^[a-zA-Z]\w+$/", $name)){
+	return TRUE;
 	}
 	else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			echo "<script>alert('Please enter a valid email.')</script>";
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
 			display: block;
 		}
 		.wrapper .form .input-group .btn {
-			margin: 20px 0;
+			margin: auto;
 			display: block;
 			padding: .7rem 2rem;
 			opacity: .8;
@@ -94,6 +94,14 @@ if (isset($_POST['submit'])) {
 		}
 		.wrapper .form .input-group .btn:hover {
 			opacity: 1;
+		}
+		.wrapper .form .input-group a 
+		{
+			background-color: #ee3a3a;
+  			color: white;
+  			padding: 15px 25px;
+  			text-decoration: none;
+  			float:left;
 		}
 		.wrapper .form .input-group input, .wrapper .form .input-group textarea {
 			width: 100%;
@@ -133,6 +141,7 @@ if (isset($_POST['submit'])) {
 			</div>
 			<div class="input-group ">
 				<button name="submit" class="btn">Post comment/feedback</button>
+				<a href="index.html">Back</a>
 			</div>
 
 		</form>
