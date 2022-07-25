@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+// Redirect user to welcome page
+if($_SESSION["userType"] != "admin")
+{
+    header("location: ../logout.php");
+}
+
+?>
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">

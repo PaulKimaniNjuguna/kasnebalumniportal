@@ -1,10 +1,21 @@
+<?php
+
+session_start();
+
+// Redirect user to welcome page
+if($_SESSION["userType"] != "superAdmin")
+{
+    header("location: ../logout.php");
+}
+
+?>
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>kasneb alumni </title>
-    <link rel="stylesheet" href="style.css">
+    <title> Super Admin </title>
+    <link rel="stylesheet" href="styles.css">
     
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,42 +34,68 @@
           </a>
         </li>
         <li>
-          <a href="evaluation.php">
+          <a href="authorizeUser.php">
             
-            <span class="links_name">Evaluation form</span>
+            <span class="links_name">Authorize registration</span>
           </a>
+
         </li>
         <li>
-          <a href="displayjobs.php">
+          <a href="#">
             
-            <span class="links_name">View jobs available</span>
+            <span class="links_name">View registered alumni</span>
+          </a>
+
+        </li>
+        <li>
+          <a href="displayevaluation.php">
+            
+            <span class="links_name">KASNEB Courses evaluation</span>
           </a>
         </li>
         
+        <li>
+          <a href="displayjobs.php">
+            
+            <span class="links_name">View jobs</span>
+          </a>
+        </li>
+        <li>
+          <a href="postjob.php">
+            
+            <span class="links_name">Add job</span>
+          </a>
+        </li>
         <li>
           <a href="displayarticles.php">
             
             <span class="links_name">View news update</span>
           </a>
         </li>
-        
         <li>
-          <a href="postcomment.php">
-            <span class="links_name">Post comment</span>
+          <a href="addarticles.php">
+            
+            <span class="links_name">Add articles</span>
           </a>
         </li>
-
+        <li>
+          <a href="displaycomments.php">
+            
+            <span class="links_name">View and reply comments</span>
+          </a>
+        </li>
+        
+        
         <li>
           <a href="#">
             
-            <span class="links_name">View comments reply</span>
+            <span class="links_name">Add admin</span>
           </a>
         </li>
-        
         <li>
           <a href="#">
             
-            <span class="links_name">Change user details</span>
+            <span class="links_name">View registered admins</span>
           </a>
         </li>
         
@@ -79,7 +116,7 @@
       
       <div class="profile-details">
         <img src="images/profile1.jpg" alt="">
-        <span class="admin_name">Alumni</span>
+        <span class="admin_name">Admin</span>
        
       </div>
     </nav>
@@ -90,7 +127,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Jobs update</div>
-           
+           <a href="displayjobs.php">View jobs</a>
             
           </div>
           
@@ -99,7 +136,7 @@
         <div class="box">
           <div class="right-side">
             <div class="box-topic">News update</div>
-           
+            <a href="displayarticles.php">View news update</a>
             
           </div>
           
@@ -109,15 +146,15 @@
 
       <div class="alumni-boxes">
         <div class="reg-alumni box">
-          <div class="title">Registration status</div>
+          <div class="title">Registered alumni</div>
           <div class="alumni-details">
-            
+          <a href=""></a>  
           </div>
           
         </div>
         <div class="comments box">
           <div class="title">Comments</div>
-          
+          <a href="displaycomments.php">View comments here</a>
         </div>
       </div>
     </div>
