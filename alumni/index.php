@@ -1,11 +1,13 @@
 <?php
 
 session_start();
+// var_dump($_SESSION["userType"]);exit();
 
 // Redirect user to welcome page
 if($_SESSION["userType"] != "alumni")
 {
-    header("location: ../logout.php");
+    // header("location: ../logout.php");
+    var_dump($_SESSION["userType"]);exit();
 }
 
 ?>
@@ -74,7 +76,7 @@ if($_SESSION["userType"] != "alumni")
         </li>
         
         <li class="log_out">
-          <a href="#">
+          <a href="../logout.php">
             <i class='bx bx-log-out'></i>
             <span class="links_name">Log out</span>
           </a>

@@ -78,7 +78,7 @@
 				<td><?php echo $row['regno'];?></td>
 				<td><?php echo $row['phoneNumber'];?></td>
 				<td>
-					<a href="approve.php?id=<?php echo $row['id']; ?>" style="background: #63a342;">Delete</a>
+					<a href="approve.php?id=<?php echo $row['id']; ?>" style="background: #63a342;">Approve</a>
 				</td>
 				<td>
 					<a href="editUserProfile.php?id=<?php echo $row['id']; ?>" style="background: #63a342;">Edit</a>

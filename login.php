@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["email"] = $email;                            
-                            $_SESSION["userType"] = $userType;                            
+                            $_SESSION["userType"] = $userType;                           
                             
                             // Redirect user to welcome page
                             if($userType === "admin")
@@ -77,6 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             }
                             elseif ($userType === "alumni") 
                             {
+                                // var_dump($userType);exit();
                                 header("location: alumni/index.php");
                             }
                         } else{
