@@ -2,13 +2,16 @@
 require 'connect.php';
 session_start();
 if (isset($_POST['submit'])) {
-	$name = $_POST['name'];
-	$email = $_POST['email']; 
+	// $name = $_POST['name'];
+	// $email = $_POST['email']; 
 	$comment = $_POST['comment'];
-	$userId = $_SESSION["userId"];
+    $id = $_POST['id'];
+    $select = "SELECT userId from comments WHERE id = $id";
+    $search = mysqli_query($mysqli, $select);$data = $search->fetch_assoc();
+	$userId = $data["userId"];
 	$error;
 
-	$sql = "INSERT INTO comments (name, email, comment, userId) VALUES ( '$name', '$email', '$comment', '$userId')";
+	$sql = "INSERT INTO comments (comment, userId) VALUES ( '$comment', '$userId')";
 	$result = mysqli_query($mysqli, $sql);
 	if ($result){
 		echo "<script>alert('Your feedback has been sent ')</script>";
@@ -119,18 +122,42 @@ if (isset($_POST['submit'])) {
 <body>
 	<div class="wrapper">
 		<h3 style="text-align: center;padding: 10px;text-decoration: underline;">Give your feedback or comment on areas we can improve</h3>
-		<form action="postcomment.php" method="POST" class="form">
-			<div class="row">
-				<div class="input-group">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" placeholder="Enter your name"  required>
-				</div>
-				<div class="input-group">
-					<label for="email">Email</label>
-					<input type="text" name="email" id="email" placeholder="Enter your Email"  required>
-				</div>
-			</div>
+        <table style="border: 1px;">
+		<thead id="evaluate">
+			<tr>
+				
+				<th>Name</th>
+				<th>Email</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody id="eval">
+			<?php
+
+			require 'connect.php';
 			
+			$id = $_REQUEST['id'];
+			$query = "SELECT * FROM comments WHERE id = '".$id."'";
+			$result = mysqli_query($mysqli, $query);
+			
+			while($row = mysqli_fetch_assoc($result))
+			{
+				?>
+				<tr>
+				
+					<td><?php echo $row['name']; ?></td>
+					<td><?php echo $row['email']; ?></td><br>
+					<td><?php echo $row['comment']; ?></td><br>
+				</tr> 
+				<?php
+				
+			}
+			?>
+		</tbody>
+
+	</table>
+		<form action="replycomment.php" method="POST" class="form">
+            <input type="hidden" name="id" id="id" value="<?php echo $_REQUEST['id']; ?>">
 			<div class="input-group textarea">
 				<label for="comment">Feedback</label>
 				<textarea id="comment" name="comment" placeholder="Enter your Comment"  required></textarea>

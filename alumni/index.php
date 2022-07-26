@@ -1,13 +1,12 @@
 <?php
 
 session_start();
-// var_dump($_SESSION["userType"]);exit();
+// var_dump($_SESSION["userId"]);exit();
 
 // Redirect user to welcome page
 if($_SESSION["userType"] != "alumni")
 {
-    // header("location: ../logout.php");
-    var_dump($_SESSION["userType"]);exit();
+    header("location: ../logout.php");
 }
 
 ?>
@@ -62,7 +61,7 @@ if($_SESSION["userType"] != "alumni")
         </li>
 
         <li>
-          <a href="#">
+          <a href="viewcomments.php">
             
             <span class="links_name">View comments reply</span>
           </a>
