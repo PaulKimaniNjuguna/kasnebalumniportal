@@ -56,8 +56,10 @@
 		<tbody id="comment">
 			<?php
 			require 'connect.php';
+            session_start();
+            $userId = $_SESSION["userId"];
 			$count = 1;
-			$query = "SELECT * FROM comments ORDER BY id";
+			$query = "SELECT * FROM comments WHERE userId = $userId ORDER BY id";
 			$result = mysqli_query($mysqli, $query);
 			while ($row = mysqli_fetch_assoc($result)) { ?>
 				<tr><td><?php echo $count;?></td>	
@@ -65,10 +67,7 @@
 				<td><?php echo $row['email'];?></td>
 				<td><?php echo $row['comment'];?></td>
 				<td>
-					<a href="viewcomments.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>
-				</td>
-				<td>
-					<a href="replycomment.php?id=<?php echo $row['id']; ?>" style="background: #38D49B;">Reply</a>
+					<a href="viewcomment.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>
 				</td>
 				<td>
 					<a href="deletecomments.php?id=<?php echo $row['id']; ?>" style="background: #ee3a3a;">Delete</a>

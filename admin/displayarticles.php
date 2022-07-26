@@ -67,7 +67,7 @@
 				<td><?php echo $row['id'];?></td>	
 				<td><?php echo $row['title'];?></td>
 				<td><?php echo $row['description'];?></td>
-				<td><?php echo $row['image'];?></td>
+				<td><?php echo'<img height="300" width="300" src="uploads/'.$row['image'].'">';?></td>
 				
 				<td>
 					<a href="viewarticles.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>
