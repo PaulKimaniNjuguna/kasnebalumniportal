@@ -21,7 +21,14 @@
             width: 700px;
            
         }
-        
+        .container  a 
+        {
+            background-color: #ee3a3a;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            float:left;
+        }
         h3 {
             text-align: center;
             margin-bottom: 3px;
@@ -318,7 +325,7 @@
             <input type="submit" name="ok"  value="Update">
             <input type="cancel" name="reset"  value="Cancel">
         </form>
-
+        <a href="index.php">Back</a>
     </div>
     
  </body>

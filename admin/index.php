@@ -33,20 +33,8 @@ if($_SESSION["userType"] != "admin")
             <span class="links_name">Dashboard</span>
           </a>
         </li>
-        <li>
-          <a href="#">
-            
-            <span class="links_name">Authorize registration</span>
-          </a>
-
-        </li>
-        <li>
-          <a href="#">
-            
-            <span class="links_name">View registered alumni</span>
-          </a>
-
-        </li>
+       
+       
         <li>
           <a href="displayevaluation.php">
             
@@ -69,7 +57,7 @@ if($_SESSION["userType"] != "admin")
         <li>
           <a href="displayarticles.php">
             
-            <span class="links_name">View news update</span>
+            <span class="links_name">View articles</span>
           </a>
         </li>
         <li>
@@ -85,12 +73,7 @@ if($_SESSION["userType"] != "admin")
           </a>
         </li>
         
-        <li>
-          <a href="#">
-            
-            <span class="links_name">Change admin details</span>
-          </a>
-        </li>
+      
         
         <li class="log_out">
           <a href="../logout.php">

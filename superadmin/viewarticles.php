@@ -5,14 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>View record</title>
 	<style>
-		a 
-		{
-			background-color: #ee3a3a;
-  			color: white;
-  			padding: 15px 25px;
-  			text-decoration: none;
-  			float:left;
-		}
 		#news 
 		{
 			width: 70%;
@@ -47,14 +39,13 @@
 	</style>
 </head>
 <body>
-	<a href="displayarticles.php">Back</a>
 	<table>
 		<thead id="news">
 			<tr>
 				
 				<th>Title</th>
 				<th>Description</th>
-				
+				<th>Image</th>
 			</tr>
 		</thead>
 		<tbody id="news">
@@ -73,7 +64,7 @@
 				
 					<td><?php echo $row['title']; ?></td>
 					<td><?php echo $row['description']; ?></td><br>
-					
+					<td><?php echo '<img src="data:image;base64,'.base64_encode($row['image']).'" alt="image" style="width: 1000px; height: 1000px;"/>'; ?></td><br>
 				</tr> 
 				<?php
 				

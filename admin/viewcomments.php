@@ -5,6 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>View record</title>
 	<style>
+		a 
+		{
+			background-color: #ee3a3a;
+  			color: white;
+  			padding: 15px 25px;
+  			text-decoration: none;
+  			float:left;
+		}
 		#evaluate 
 		{
 			width: 70%;
@@ -39,6 +47,7 @@
 	</style>
 </head>
 <body>
+	<a href="index.php">Back</a>
 	<table>
 		<thead id="evaluate">
 			<tr>

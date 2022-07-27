@@ -40,13 +40,7 @@ if($_SESSION["userType"] != "superAdmin")
           </a>
 
         </li>
-        <li>
-          <a href="#">
-            
-            <span class="links_name">View registered alumni</span>
-          </a>
-
-        </li>
+      
         <li>
           <a href="displayevaluation.php">
             
@@ -69,7 +63,7 @@ if($_SESSION["userType"] != "superAdmin")
         <li>
           <a href="displayarticles.php">
             
-            <span class="links_name">View news update</span>
+            <span class="links_name">View articles</span>
           </a>
         </li>
         <li>
@@ -85,19 +79,6 @@ if($_SESSION["userType"] != "superAdmin")
           </a>
         </li>
         
-        
-        <li>
-          <a href="#">
-            
-            <span class="links_name">Add admin</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            
-            <span class="links_name">View registered admins</span>
-          </a>
-        </li>
         
         <li class="log_out">
           <a href="../logout.php">

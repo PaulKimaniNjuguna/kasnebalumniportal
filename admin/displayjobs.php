@@ -5,9 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>View evaluation form</title>
 	<style>
+		a 
+		{
+			background-color: #ee3a3a;
+  			color: white;
+  			padding: 15px 25px;
+  			text-decoration: none;
+  			float:left;
+		}
 		#job 
 		{
-			width: 90%;
+			width: 100%;
 			border: collapse;
 			font-family: Arial, Helvetica, sans-serif;
 		}
@@ -19,7 +27,7 @@
 		}
 		#job 
 		{
-			width: 90%;
+			width: 100%;
 			border: collapse;
 			font-family: Arial, Helvetica, sans-serif;
 		}
@@ -44,6 +52,7 @@
 	</style>
 </head>
 <body>
+	<a href="index.php">Back</a>
 	<table id="job">
 		<thead>
 			<tr>

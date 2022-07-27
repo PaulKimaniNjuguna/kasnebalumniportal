@@ -122,9 +122,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             background-color: #44c8f6;
             padding: 20px;
             margin: auto;
-            height: 650px;
-            width: 700px;
+            height: 350px;
+            width: 500px;
            
+        }
+        .container a {
+            background-color: #ee3a3a;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            float:left;
         }
         
         h3 {
@@ -333,7 +340,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="submit" name="ok"  value="Login">
             <input type="cancel" name="reset"  value="Cancel">
         </form>
-
+        <a href="./index.html">Back</a>
     </div>
     
  </body>

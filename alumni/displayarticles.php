@@ -51,7 +51,7 @@
 	</style>
 </head>
 <body>
-	<a href="index.html">Back</a>
+	<a href="index.php">Back</a>
 	<form action="" method="" enctype="multipart/form-data">
 	<table id="news">
 		<thead>

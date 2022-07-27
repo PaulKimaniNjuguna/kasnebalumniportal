@@ -21,6 +21,14 @@
             width: 700px;
            
         }
+        .container a 
+        {
+            background-color: #ee3a3a;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            float:left;
+        }
         
         h3 {
             text-align: center;
@@ -247,7 +255,7 @@
 
         if ( $mysqli->query($sql) === TRUE)
         {
-            echo "<script>alert('Password do not match.')<script>";
+            echo "<script>alert('Registration successful')<script>";
         }
         else
         {
@@ -312,7 +320,7 @@
             <input type="submit" name="ok"  value="Register">
             <input type="cancel" name="reset"  value="Cancel">
         </form>
-
+        <a href="./index.html">Back</a>
     </div>
     
  </body>

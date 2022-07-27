@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
 			width: 600px;
 			min-height: 400px;
 		}
+		
 		.wrapper .row {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -137,9 +138,9 @@ if (isset($_POST['submit'])) {
 			</div>
 			<div class="input-group ">
 				<button name="submit" class="btn">Post comment/feedback</button>
-				<a href="index.html">Back</a>
+				<a href="index.php">Back</a>
 			</div>
-
+			
 		</form>
 	</div>
 

@@ -168,7 +168,7 @@ if (isset($_POST['submit']))
 		
 		<div class="input-group">
 			<button class="btn" name="submit">Post job</button>
-			<a href="index.html">Back</a>
+			<a href="index.php">Back</a>
 		</div>
 		</form>
 	</div>

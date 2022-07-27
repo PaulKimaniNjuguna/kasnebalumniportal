@@ -52,7 +52,7 @@
 	</style>
 </head>
 <body>
-	<a href="index.html">Back</a>
+	<a href="index.php">Back</a>
 	<form action="" method="" enctype="multipart/form-data">
 	<table id="news">
 		<thead>
@@ -61,6 +61,7 @@
 				<th><strong>Id</strong></th>
 				<th><strong>Title</strong></th>
 				<th><strong>Description</strong></th>
+				<th><strong>Image</strong></th>
 				
 			</tr>
 		</thead>
@@ -75,14 +76,13 @@
 				<td><?php echo $row['id'];?></td>	
 				<td><?php echo $row['title'];?></td>
 				<td><?php echo $row['description'];?></td>
+				<td><?php echo'<img height="300" width="300" src="upload/'.$row['image'].'">';?></td>
 				
-				
-
 				<td>
 					<a href="viewarticles.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>
 				</td>
 				<td>
-					<a href="" style="background: #FFA701;">Edit</a>
+					<a href="editarticles.php?id=<?php echo $row['id'];?>" style="background: #FFA701;">Edit</a>
 				</td>
 				<td>
 					<a href="deletearticles.php?id=<?php echo $row['id']; ?>" style="background: #ee3a3a;">Delete</a>

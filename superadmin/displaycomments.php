@@ -5,9 +5,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>View evaluation form</title>
 	<style>
+		a 
+		{
+			background-color: #ee3a3a;
+  			color: white;
+  			padding: 15px 25px;
+  			text-decoration: none;
+  			float:left;
+		}
 		#comment 
 		{
-			width: 90%;
+			width: 100%;
 			border: collapse;
 			font-family: Arial, Helvetica, sans-serif;
 		}
@@ -19,7 +27,7 @@
 		}
 		#comment 
 		{
-			width: 90%;
+			width: 100%;
 			border: collapse;
 			font-family: Arial, Helvetica, sans-serif;
 		}
@@ -44,6 +52,7 @@
 	</style>
 </head>
 <body>
+	<a href="index.php">Back</a>
 	<table id="comment">
 		<thead>
 			<tr>
@@ -68,7 +77,7 @@
 					<a href="viewcomments.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>
 				</td>
 				<td>
-					<a href="" style="background: #38D49B;">Reply</a>
+					<a href="replycomment.php?id=<?php echo $row['id']; ?>" style="background: #38D49B;">Reply</a>
 				</td>
 				<td>
 					<a href="deletecomments.php?id=<?php echo $row['id']; ?>" style="background: #ee3a3a;">Delete</a>

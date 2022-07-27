@@ -50,7 +50,7 @@ if($_SESSION["userType"] != "alumni")
         <li>
           <a href="displayarticles.php">
             
-            <span class="links_name">View news update</span>
+            <span class="links_name">View articles</span>
           </a>
         </li>
         
@@ -67,12 +67,6 @@ if($_SESSION["userType"] != "alumni")
           </a>
         </li>
         
-        <li>
-          <a href="#">
-            
-            <span class="links_name">Change user details</span>
-          </a>
-        </li>
         
         <li class="log_out">
           <a href="../logout.php">
@@ -103,16 +97,16 @@ if($_SESSION["userType"] != "alumni")
           <div class="right-side">
             <div class="box-topic">Jobs update</div>
            
-            
+            <a href="displayjobs.php">View jobs here</a>
           </div>
           
         </div>
         
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">News update</div>
+            <div class="box-topic">Articles</div>
            
-            
+            <a href="displayarticles.php">View articles here</a>
           </div>
           
         </div>
@@ -121,15 +115,15 @@ if($_SESSION["userType"] != "alumni")
 
       <div class="alumni-boxes">
         <div class="reg-alumni box">
-          <div class="title">Registration status</div>
+          <div class="title">Post comment</div>
           <div class="alumni-details">
-            
+            <a href="postcomment.php">Post comment here</a>
           </div>
           
         </div>
         <div class="comments box">
           <div class="title">Comments</div>
-          
+          <a href="viewcomments.php">View comments here</a>
         </div>
       </div>
     </div>

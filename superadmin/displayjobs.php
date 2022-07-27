@@ -52,7 +52,7 @@
 	</style>
 </head>
 <body>
-	<a href="index.html">Back</a>
+	<a href="index.php">Back</a>
 	<table id="job">
 		<thead>
 			<tr>

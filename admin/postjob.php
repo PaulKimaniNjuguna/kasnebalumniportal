@@ -119,7 +119,7 @@ if (isset($_POST['submit']))
 			resize: none;
 		}
 		.wrapper .form .input-group .btn {
-			margin: 20px 0;
+			margin: auto;
 			display: block;
 			padding: .7rem 2rem;
 			opacity: .8;
@@ -131,6 +131,14 @@ if (isset($_POST['submit']))
 			cursor: pointer;
 			font-size: 1rem;
 			transition: .3 ease-in;
+		}
+		.wrapper .form .input-group a 
+		{
+			background-color: #ee3a3a;
+  			color: white;
+  			padding: 15px 25px;
+  			text-decoration: none;
+  			float:left;
 		}
 	</style>
 </head>
@@ -160,6 +168,7 @@ if (isset($_POST['submit']))
 		
 		<div class="input-group">
 			<button class="btn" name="submit">Post job</button>
+			<a href="index.php">Back</a>
 		</div>
 		</form>
 	</div>
