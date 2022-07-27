@@ -261,7 +261,7 @@
 
         if ( $mysqli->query($sql) === TRUE)
         {
-            echo "<script>alert('Saved')<script>";
+            echo "<script>alert('Saved')<script><br><br>";
             header("location: superadmin/index.php");
         }
         else

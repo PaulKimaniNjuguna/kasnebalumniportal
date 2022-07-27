@@ -7,7 +7,7 @@ if (isset($_POST['submit']))
 	$title = $_POST['title'];
 	$description = $_POST['description'];
 
-	$target_dir = "uploads/";
+	$target_dir = "../uploads/";
 	$temp1 = explode(".", $_FILES["fileToUpload"]["name"]);
 	$newfilename = round(microtime(true)) . '.' . end($temp1);
 	$target_file = $target_dir . basename($newfilename);

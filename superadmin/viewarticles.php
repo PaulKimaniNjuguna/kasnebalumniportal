@@ -64,7 +64,9 @@
 				
 					<td><?php echo $row['title']; ?></td>
 					<td><?php echo $row['description']; ?></td><br>
-					<td><?php echo '<img src="data:image;base64,'.base64_encode($row['image']).'" alt="image" style="width: 1000px; height: 1000px;"/>'; ?></td><br>
+					<td><?php echo'<img height="300" width="300" src="../uploads/'.$row['image'].'">';?></td>
+				
+				<td>
 				</tr> 
 				<?php
 				

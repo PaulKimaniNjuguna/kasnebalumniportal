@@ -53,7 +53,7 @@
 				
 				<th>Title</th>
 				<th>Description</th>
-				
+				<th>Image</th>
 			</tr>
 		</thead>
 		<tbody id="news">
@@ -72,7 +72,9 @@
 				
 					<td><?php echo $row['title']; ?></td>
 					<td><?php echo $row['description']; ?></td><br>
-					
+					<td><?php echo'<img height="300" width="300" src="../uploads/'.$row['image'].'">';?></td>
+				
+				
 				</tr> 
 				<?php
 				

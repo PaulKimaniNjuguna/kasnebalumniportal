@@ -73,7 +73,14 @@
             width: 700px;
            
         }
-        
+        .container a 
+        {
+            background-color: #ee3a3a;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            float: left;
+        }
         h3 {
             text-align: center;
             margin-bottom: 3px;
@@ -248,7 +255,7 @@
             color: white;
             padding: 16px 32px;
             text-decoration: none;
-            margin: auto;
+            margin-left: 150px;
             cursor: pointer;
         }
         
@@ -307,7 +314,8 @@
             </select><br>
             
             <input type="submit" name="ok"  value="Register">
-            <input type="cancel" name="reset"  value="Cancel">
+            
+            <a href="./index.html">Back</a>
         </form>
 
     </div>

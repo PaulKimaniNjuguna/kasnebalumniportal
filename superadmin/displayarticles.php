@@ -58,7 +58,7 @@
 		<thead>
 			<tr>
 				<th><strong>S.No</strong></th>
-				<th><strong>Id</strong></th>
+				
 				<th><strong>Title</strong></th>
 				<th><strong>Description</strong></th>
 				<th><strong>Image</strong></th>
@@ -73,10 +73,10 @@
 			$result = mysqli_query($mysqli, $query);
 			while ($row = mysqli_fetch_assoc($result)) { ?>
 				<tr><td><?php echo $count;?></td>
-				<td><?php echo $row['id'];?></td>	
+					
 				<td><?php echo $row['title'];?></td>
 				<td><?php echo $row['description'];?></td>
-				<td><?php echo'<img height="300" width="300" src="upload/'.$row['image'].'">';?></td>
+				<td><?php echo'<img height="300" width="300" src="../uploads/'.$row['image'].'">';?></td>
 				
 				<td>
 					<a href="viewarticles.php?id=<?php echo $row['id']; ?>" style="background: #44c8f6;">View</a>

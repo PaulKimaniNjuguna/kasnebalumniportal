@@ -338,7 +338,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             ?><br>
             
             <input type="submit" name="ok"  value="Login">
-            <input type="cancel" name="reset"  value="Cancel">
+            
         </form>
         <a href="./index.html">Back</a>
     </div>

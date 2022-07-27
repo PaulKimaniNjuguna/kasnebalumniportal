@@ -7,44 +7,66 @@ if (isset($_POST['submit']))
 	$title = $_POST['title'];
 	$description = $_POST['description'];
 
-	$file = $_FILES['image']['name']; //get the image file
+	$target_dir = "../uploads/";
+	$temp1 = explode(".", $_FILES["fileToUpload"]["name"]);
+	$newfilename = round(microtime(true)) . '.' . end($temp1);
+	$target_file = $target_dir . basename($newfilename);
+	$uploadOk = 1;
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-	
-	//get the extension file*/
-	
-	//allowed extensions
-	$allowed_extensions = array('.jpg', '.gif', '.jpeg', '.png');
-
-	 
-
-
-	
-
-//restrict only alphabets and spaces on the title
- if (str_contains("/^[A-Za-z]\w+$/", $title)) 
-{
-	return TRUE;
-}
-else if (in_array ($file, $allowed_extensions)) 
-	
-	{
-		$newfile = md5($file).$allowed_extensions;
-		move_uploaded_file($_FILES['image']['tmp_name'] .$newfile);
-
+	// Check if image file is a actual image or fake image
+	if(isset($_POST["submit"])) {
+	$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+	if($check !== false) {
+		echo "File is an image - " . $check["mime"] . ".";
+		$uploadOk = 1;
+	} else {
+		echo "File is not an image.";
+		$uploadOk = 0;
 	}
-else
-{
-	$sql = "INSERT INTO articles (title, description, image) VALUES('$title', '$description', '$file')";
+	}
 
-	if ($mysqli->query($sql) === TRUE) 
-	{
-		echo "<script>alert('Article has been added.')</script>";
+	// Check if file already exists
+	if (file_exists($target_file)) {
+	echo "Sorry, file already exists.";
+	$uploadOk = 0;
 	}
-	else
-	{
-		echo "Error:" . $sql . "<br>" . $mysqli->error;
+
+	// Check file size
+	if ($_FILES["fileToUpload"]["size"] > 500000) {
+	echo "Sorry, your file is too large.";
+	$uploadOk = 0;
 	}
-}
+
+	// Allow certain file formats
+	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+	echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+	$uploadOk = 0;
+	}
+
+	// Check if $uploadOk is set to 0 by an error
+	if ($uploadOk == 0) {
+	echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+	} else {
+	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) 
+	{
+		$sql = "INSERT INTO articles (title, description, image) VALUES('$title', '$description', '$newfilename')";
+
+		if ($mysqli->query($sql) === TRUE) 
+		{
+			echo "<script>alert('Article has been added.')</script>";
+		}
+		else
+		{
+			echo "Error:" . $sql . "<br>" . $mysqli->error;
+		}
+		
+	} else 
+	{
+		echo "Sorry, there was an error uploading your file.";
+	}
+	}
 
 }
 
@@ -160,7 +182,7 @@ else
 	
 	<div class="container">
 		<h3>Add articles</h3>
-		<form class="form" action="" method="POST" enctype="multipart/form-data"> <!--enctype allows to upload a file -->
+		<form class="form" action="addarticles.php" method="POST" enctype="multipart/form-data"> <!--enctype allows to upload a file -->
 			<div class="input-group">
 
 				<label>Title</label>
@@ -172,7 +194,7 @@ else
 			</div>
 			<div class="input-group	picture">
 				<label>Picture</label>
-				<input type="file" name="image">
+				<input type="file" name="fileToUpload" id="fileToUpload">
 			</div>
 			<div class="button">
 				<button class="btn" name="submit">Submit</button>
