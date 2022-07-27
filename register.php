@@ -1,3 +1,55 @@
+<?php
+    require "connect.php";
+
+    //decalare and initialize variables
+    $name = $regno = $exam = $lastdate = $mobileno = $email = $password = $confirmpassword = $companyname = $occupation = $telno = $companyemail = $professional = $membership  = "";
+     $password_err = "<script>alert(Kindly enter password.)<script>";
+
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+
+        if(empty(trim($_POST["password"])))
+        {
+            // echo "<script>alert('Please enter a password.')</script>";
+        }
+        else
+        {
+
+        $name = $_POST["name"];
+        $regno = $_POST["regno"];
+        $exam = $_POST["exam"];
+        $lastSitting = $_POST["lastSitting"];
+        $phoneNumber = $_POST["phoneNumber"];
+        $email = $_POST["email"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $company = $_POST["company"];
+        $occupation = $_POST["occupation"];
+        $officePhone = $_POST["telno"];
+        $companyEmail = $_POST["cmail"];
+        $proffesionalBody = $_POST["professional"];
+        $membershipType = $_POST["memberships"];
+
+        $sql = "INSERT INTO users (name, regno, examination, lastsitting, phoneNumber, email, password, company, occupation, officePhone, companyEmail, proffesionalBody, membershipType)  VALUES ('$name', '$regno', '$exam', '$lastSitting', '$phoneNumber', '$email', '$password', '$company', '$occupation', '$officePhone', '$companyEmail', '$proffesionalBody', '$membershipType')";
+
+        if ( $mysqli->query($sql) === TRUE)
+        {
+            header("location: login.php");
+        }
+        else
+        {
+            echo "Error: " . $sql . "<br>" . $mysqli->error;
+        }
+
+    }
+
+
+    }
+
+
+    $nameErr = $regnoErr = $examErr = $lastsittingErr = $phonenoErr = $emailErr = $passwordErr = $confirmpasswordErr = $companynameErr = $occupation = $error = ""; 
+
+
+    ?>
  <!DOCTYPE html>
  <html>
  <head>
@@ -212,61 +264,6 @@
     </style>
  </head>
  <body>
-    <?php
-    require "connect.php";
-
-    //decalare and initialize variables
-    $name = $regno = $exam = $lastdate = $mobileno = $email = $password = $confirmpassword = $companyname = $occupation = $telno = $companyemail = $professional = $membership  = "";
-     $password_err = "<script>alert(Kindly enter password.)<script>";
-
-    if($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-
-        if(empty(trim($_POST["password"])))
-        {
-            echo "<script>alert('Please enter a password.')</script>";
-        }
-        else
-        {
-
-        $name = $_POST["name"];
-        $regno = $_POST["regno"];
-        $exam = $_POST["exam"];
-        $lastSitting = $_POST["lastSitting"];
-        $phoneNumber = $_POST["phoneNumber"];
-        $email = $_POST["email"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        $company = $_POST["company"];
-        $occupation = $_POST["occupation"];
-        $officePhone = $_POST["telno"];
-        $companyEmail = $_POST["cmail"];
-        $proffesionalBody = $_POST["professional"];
-        $membershipType = $_POST["memberships"];
-
-        $sql = "INSERT INTO users (name, regno, examination, lastsitting, phoneNumber, email, password, company, occupation, officePhone, companyEmail, proffesionalBody, membershipType)  VALUES ('$name', '$regno', '$exam', '$lastSitting', '$phoneNumber', '$email', '$password', '$company', '$occupation', '$officePhone', '$companyEmail', '$proffesionalBody', '$membershipType')";
-
-        if ( $mysqli->query($sql) === TRUE)
-        {
-            echo "<script>alert('Password do not match.')<script>";
-        }
-        else
-        {
-            echo "Error: " . $sql . "<br>" . $mysqli->error;
-        }
-
-    }
-
-
-    }
-
-
-    $nameErr = $regnoErr = $examErr = $lastsittingErr = $phonenoErr = $emailErr = $passwordErr = $confirmpasswordErr = $companynameErr = $occupation = $error = ""; 
-
-
-    ?>
-   
-
-
     <div class="container">
         <form action="register.php" method="POST">
             <h3><strong>Personal details</strong></h3><br>
