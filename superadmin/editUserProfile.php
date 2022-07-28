@@ -323,9 +323,8 @@
             <br>
             
             <input type="submit" name="ok"  value="Update">
-            <input type="cancel" name="reset"  value="Cancel">
         </form>
-        <a href="index.php">Back</a>
+        <a href="authorizeUser.php">Back</a>
     </div>
     
  </body>

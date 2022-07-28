@@ -63,7 +63,7 @@ if($_SESSION["userType"] != "alumni")
         <li>
           <a href="viewcomments.php">
             
-            <span class="links_name">View comments reply</span>
+            <span class="links_name">View comment's reply</span>
           </a>
         </li>
         

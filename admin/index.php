@@ -41,17 +41,22 @@ if($_SESSION["userType"] != "admin")
             <span class="links_name">KASNEB Courses evaluation</span>
           </a>
         </li>
-        
+        <li>
+          <a href="postjob.php">
+            
+            <span class="links_name">Add job</span>
+          </a>
+        </li>
         <li>
           <a href="displayjobs.php">
             
             <span class="links_name">View jobs</span>
           </a>
         </li>
-        <li>
-          <a href="postjob.php">
+         <li>
+          <a href="addarticles.php">
             
-            <span class="links_name">Add job</span>
+            <span class="links_name">Add articles</span>
           </a>
         </li>
         <li>
@@ -60,12 +65,7 @@ if($_SESSION["userType"] != "admin")
             <span class="links_name">View articles</span>
           </a>
         </li>
-        <li>
-          <a href="addarticles.php">
-            
-            <span class="links_name">Add articles</span>
-          </a>
-        </li>
+       
         <li>
           <a href="displaycomments.php">
             
@@ -122,9 +122,9 @@ if($_SESSION["userType"] != "admin")
 
       <div class="alumni-boxes">
         <div class="reg-alumni box">
-          <div class="title">Registered alumni</div>
+          <div class="title">Evaluation</div>
           <div class="alumni-details">
-          <a href=""></a>  
+          <a href="displayevaluation.php">View courses evaluation</a>  
           </div>
           
         </div>

@@ -121,7 +121,7 @@ if (isset($_POST['submit'])) {
 </head>
 <body>
 	<div class="wrapper">
-		<h3 style="text-align: center;padding: 10px;text-decoration: underline;">Give your feedback or comment on areas we can improve</h3>
+		<h3 style="text-align: center;padding: 10px;text-decoration: underline;">Reply to comments</h3>
         <table style="border: 1px;">
 		<thead id="evaluate">
 			<tr>

@@ -36,7 +36,7 @@ if($_SESSION["userType"] != "superAdmin")
         <li>
           <a href="authorizeUser.php">
             
-            <span class="links_name">Authorize registration</span>
+            <span class="links_name">Manage users</span>
           </a>
 
         </li>
@@ -47,13 +47,6 @@ if($_SESSION["userType"] != "superAdmin")
             <span class="links_name">KASNEB Courses evaluation</span>
           </a>
         </li>
-        
-        <li>
-          <a href="displayjobs.php">
-            
-            <span class="links_name">View jobs</span>
-          </a>
-        </li>
         <li>
           <a href="postjob.php">
             
@@ -61,9 +54,9 @@ if($_SESSION["userType"] != "superAdmin")
           </a>
         </li>
         <li>
-          <a href="displayarticles.php">
+          <a href="displayjobs.php">
             
-            <span class="links_name">View articles</span>
+            <span class="links_name">View jobs</span>
           </a>
         </li>
         <li>
@@ -72,6 +65,13 @@ if($_SESSION["userType"] != "superAdmin")
             <span class="links_name">Add articles</span>
           </a>
         </li>
+        <li>
+          <a href="displayarticles.php">
+            
+            <span class="links_name">View articles</span>
+          </a>
+        </li>
+        
         <li>
           <a href="displaycomments.php">
             
@@ -97,7 +97,7 @@ if($_SESSION["userType"] != "superAdmin")
       
       <div class="profile-details">
         <img src="images/profile1.jpg" alt="">
-        <span class="admin_name">Admin</span>
+        <span class="admin_name">Super admin</span>
        
       </div>
     </nav>
@@ -127,9 +127,9 @@ if($_SESSION["userType"] != "superAdmin")
 
       <div class="alumni-boxes">
         <div class="reg-alumni box">
-          <div class="title">Registered alumni</div>
+          <div class="title">Courses evaluation</div>
           <div class="alumni-details">
-          <a href=""></a>  
+          <a href="displayevaluation.php">View courses evaluation</a>  
           </div>
           
         </div>
